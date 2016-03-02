@@ -14,6 +14,7 @@ namespace MaryKayP
     public partial class Form1 : Form
     {
         //Variables
+        int seccion = 1;
         bool read;
         int currentUser = 0;
         string input;
@@ -55,8 +56,6 @@ namespace MaryKayP
             vendedorToolStripMenuItem.PerformClick();
             read = dataGridView1.ReadOnly;
             dataGridView1.ReadOnly = false;
-            btnInventario.Visible = false;
-            button5.Visible = false;
             DataSet ds = new DataSet();
             //ds.ReadXml("C:\\Users\\Ara\\maryKayDB\\marykayDB.xml");
             ds.ReadXml("C:\\Users\\roger\\Desktop\\marykayDB.xml");
@@ -78,6 +77,7 @@ namespace MaryKayP
 
         //Categorias
         //lapiz labial++
+        
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             categoryIndex = "19";
@@ -964,6 +964,7 @@ namespace MaryKayP
         //Metodo para cambiar a usuario simple
         private void vendedorToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            lblInventario.Visible = false;
             label8.Text = "";
             button4.Visible = false;
             dataGridView1.ReadOnly = true;
@@ -1024,7 +1025,7 @@ namespace MaryKayP
             dataGridView1.Rows.Add(newRow);
             dataGridView1.Refresh();
         } 
-
+        
         //Eliminar producto
         private void button5_Click_1(object sender, EventArgs e)
         {
@@ -1086,10 +1087,10 @@ namespace MaryKayP
                 totalDeFila = Double.Parse(r.Cells[1].Value.ToString()) * Double.Parse(r.Cells[2].Value.ToString());
                 total += totalDeFila;
             }
-            label8.Text = total.ToString();
+            label8.Text = total.ToString("C");
             label8.Update();
         }
-
+        //Login de admin
         private void btnAceptarPass_Click(object sender, EventArgs e)
         {
             input = txtPass.Text;
@@ -1104,12 +1105,52 @@ namespace MaryKayP
                 btnAceptarPass.Visible = false;
                 txtPass.Visible = false;
                 txtPass.Text = "";
+                lblInventario.Visible = true;
             }
             else
             {
 
             }
         }
+
+        //Abrir el primer Inventario
+        private void sección1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            seccion = 1;
+            panel1.Visible = true;
+            panel2.Visible = false;
+            panel3.Visible = false;
+            label6.Visible = true;
+            label7.Visible = false;
+            label9.Visible = false;
+
+        }
+        //Abrir el segundo inventario
+        private void sección2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            seccion = 2;
+            panel1.Visible = false;
+            panel2.Visible = true;
+            panel3.Visible = false;
+            label6.Visible = false;
+            label7.Visible = true;
+            label9.Visible = false;
+
+
+        }
+        //Abrir el tercer inventario
+        private void sección3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            seccion = 3;
+            panel1.Visible = false;
+            panel2.Visible = false;
+            panel3.Visible = true;
+            label6.Visible = false;
+            label7.Visible = false;
+            label9.Visible = true;
+
+        }
+
     }//class
 
 }//namespace
