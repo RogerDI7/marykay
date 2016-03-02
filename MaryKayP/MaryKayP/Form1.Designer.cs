@@ -34,6 +34,10 @@
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administradorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vendedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inventariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sección1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sección2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sección3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -86,7 +90,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblInventario = new System.Windows.Forms.Label();
             this.btnInventario = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
@@ -101,9 +105,17 @@
             this.lblAdmin = new System.Windows.Forms.Label();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.btnAceptarPass = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -111,7 +123,8 @@
             this.menuStrip1.BackColor = System.Drawing.Color.Lavender;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usuarioToolStripMenuItem});
+            this.usuarioToolStripMenuItem,
+            this.inventariosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
@@ -141,6 +154,37 @@
             this.vendedorToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
             this.vendedorToolStripMenuItem.Text = "Vendedor";
             this.vendedorToolStripMenuItem.Click += new System.EventHandler(this.vendedorToolStripMenuItem_Click);
+            // 
+            // inventariosToolStripMenuItem
+            // 
+            this.inventariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sección1ToolStripMenuItem,
+            this.sección2ToolStripMenuItem,
+            this.sección3ToolStripMenuItem});
+            this.inventariosToolStripMenuItem.Name = "inventariosToolStripMenuItem";
+            this.inventariosToolStripMenuItem.Size = new System.Drawing.Size(93, 24);
+            this.inventariosToolStripMenuItem.Text = "Inventarios";
+            // 
+            // sección1ToolStripMenuItem
+            // 
+            this.sección1ToolStripMenuItem.Name = "sección1ToolStripMenuItem";
+            this.sección1ToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
+            this.sección1ToolStripMenuItem.Text = "Sección 1";
+            this.sección1ToolStripMenuItem.Click += new System.EventHandler(this.sección1ToolStripMenuItem_Click);
+            // 
+            // sección2ToolStripMenuItem
+            // 
+            this.sección2ToolStripMenuItem.Name = "sección2ToolStripMenuItem";
+            this.sección2ToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
+            this.sección2ToolStripMenuItem.Text = "Sección 2";
+            this.sección2ToolStripMenuItem.Click += new System.EventHandler(this.sección2ToolStripMenuItem_Click);
+            // 
+            // sección3ToolStripMenuItem
+            // 
+            this.sección3ToolStripMenuItem.Name = "sección3ToolStripMenuItem";
+            this.sección3ToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
+            this.sección3ToolStripMenuItem.Text = "Sección 3";
+            this.sección3ToolStripMenuItem.Click += new System.EventHandler(this.sección3ToolStripMenuItem_Click);
             // 
             // imageList1
             // 
@@ -186,7 +230,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(17, 669);
+            this.radioButton1.Location = new System.Drawing.Point(312, 33);
             this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(105, 21);
@@ -199,7 +243,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(335, 210);
+            this.radioButton2.Location = new System.Drawing.Point(312, 319);
             this.radioButton2.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(185, 21);
@@ -212,7 +256,7 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(335, 123);
+            this.radioButton3.Location = new System.Drawing.Point(312, 232);
             this.radioButton3.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(155, 21);
@@ -225,7 +269,7 @@
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(335, 326);
+            this.radioButton4.Location = new System.Drawing.Point(312, 435);
             this.radioButton4.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(224, 21);
@@ -238,7 +282,7 @@
             // radioButton5
             // 
             this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(335, 36);
+            this.radioButton5.Location = new System.Drawing.Point(312, 145);
             this.radioButton5.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(179, 21);
@@ -251,7 +295,7 @@
             // radioButton6
             // 
             this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(335, 94);
+            this.radioButton6.Location = new System.Drawing.Point(312, 203);
             this.radioButton6.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton6.Name = "radioButton6";
             this.radioButton6.Size = new System.Drawing.Size(177, 21);
@@ -264,7 +308,7 @@
             // radioButton7
             // 
             this.radioButton7.AutoSize = true;
-            this.radioButton7.Location = new System.Drawing.Point(17, 379);
+            this.radioButton7.Location = new System.Drawing.Point(4, 290);
             this.radioButton7.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton7.Name = "radioButton7";
             this.radioButton7.Size = new System.Drawing.Size(164, 21);
@@ -277,7 +321,7 @@
             // radioButton8
             // 
             this.radioButton8.AutoSize = true;
-            this.radioButton8.Location = new System.Drawing.Point(17, 437);
+            this.radioButton8.Location = new System.Drawing.Point(4, 348);
             this.radioButton8.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton8.Name = "radioButton8";
             this.radioButton8.Size = new System.Drawing.Size(164, 21);
@@ -290,7 +334,7 @@
             // radioButton9
             // 
             this.radioButton9.AutoSize = true;
-            this.radioButton9.Location = new System.Drawing.Point(17, 408);
+            this.radioButton9.Location = new System.Drawing.Point(4, 319);
             this.radioButton9.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton9.Name = "radioButton9";
             this.radioButton9.Size = new System.Drawing.Size(170, 21);
@@ -304,12 +348,12 @@
             // 
             this.radioButton10.AutoSize = true;
             this.radioButton10.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.radioButton10.Location = new System.Drawing.Point(17, 207);
+            this.radioButton10.Location = new System.Drawing.Point(312, 174);
             this.radioButton10.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(89, 21);
+            this.radioButton10.Size = new System.Drawing.Size(79, 21);
             this.radioButton10.TabIndex = 22;
-            this.radioButton10.Text = "Crayones";
+            this.radioButton10.Text = "MK play";
             this.radioButton10.UseVisualStyleBackColor = true;
             this.radioButton10.CheckedChanged += new System.EventHandler(this.radioButton10_CheckedChanged);
             // 
@@ -317,7 +361,7 @@
             // 
             this.radioButton11.AutoSize = true;
             this.radioButton11.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.radioButton11.Location = new System.Drawing.Point(17, 582);
+            this.radioButton11.Location = new System.Drawing.Point(4, 493);
             this.radioButton11.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton11.Name = "radioButton11";
             this.radioButton11.Size = new System.Drawing.Size(144, 21);
@@ -330,7 +374,7 @@
             // 
             this.radioButton12.AutoSize = true;
             this.radioButton12.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.radioButton12.Location = new System.Drawing.Point(335, 181);
+            this.radioButton12.Location = new System.Drawing.Point(312, 290);
             this.radioButton12.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton12.Name = "radioButton12";
             this.radioButton12.Size = new System.Drawing.Size(71, 21);
@@ -343,12 +387,12 @@
             // 
             this.radioButton13.AutoSize = true;
             this.radioButton13.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.radioButton13.Location = new System.Drawing.Point(17, 698);
+            this.radioButton13.Location = new System.Drawing.Point(312, 62);
             this.radioButton13.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton13.Name = "radioButton13";
-            this.radioButton13.Size = new System.Drawing.Size(270, 21);
+            this.radioButton13.Size = new System.Drawing.Size(87, 21);
             this.radioButton13.TabIndex = 26;
-            this.radioButton13.Text = "Limpiar, Renovar la Textura, Timewise";
+            this.radioButton13.Text = "Timewise";
             this.radioButton13.UseVisualStyleBackColor = true;
             this.radioButton13.CheckedChanged += new System.EventHandler(this.radioButton13_CheckedChanged);
             // 
@@ -356,7 +400,7 @@
             // 
             this.radioButton14.AutoSize = true;
             this.radioButton14.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.radioButton14.Location = new System.Drawing.Point(17, 640);
+            this.radioButton14.Location = new System.Drawing.Point(312, 4);
             this.radioButton14.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton14.Name = "radioButton14";
             this.radioButton14.Size = new System.Drawing.Size(152, 21);
@@ -369,7 +413,7 @@
             // 
             this.radioButton16.AutoSize = true;
             this.radioButton16.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.radioButton16.Location = new System.Drawing.Point(17, 727);
+            this.radioButton16.Location = new System.Drawing.Point(312, 91);
             this.radioButton16.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton16.Name = "radioButton16";
             this.radioButton16.Size = new System.Drawing.Size(173, 21);
@@ -382,7 +426,7 @@
             // 
             this.radioButton20.AutoSize = true;
             this.radioButton20.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.radioButton20.Location = new System.Drawing.Point(335, 268);
+            this.radioButton20.Location = new System.Drawing.Point(312, 377);
             this.radioButton20.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton20.Name = "radioButton20";
             this.radioButton20.Size = new System.Drawing.Size(115, 21);
@@ -395,7 +439,7 @@
             // 
             this.radioButton21.AutoSize = true;
             this.radioButton21.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.radioButton21.Location = new System.Drawing.Point(17, 756);
+            this.radioButton21.Location = new System.Drawing.Point(312, 120);
             this.radioButton21.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton21.Name = "radioButton21";
             this.radioButton21.Size = new System.Drawing.Size(99, 21);
@@ -408,7 +452,7 @@
             // 
             this.radioButton22.AutoSize = true;
             this.radioButton22.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.radioButton22.Location = new System.Drawing.Point(17, 149);
+            this.radioButton22.Location = new System.Drawing.Point(4, 89);
             this.radioButton22.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton22.Name = "radioButton22";
             this.radioButton22.Size = new System.Drawing.Size(269, 21);
@@ -421,7 +465,7 @@
             // 
             this.radioButton23.AutoSize = true;
             this.radioButton23.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.radioButton23.Location = new System.Drawing.Point(335, 152);
+            this.radioButton23.Location = new System.Drawing.Point(312, 261);
             this.radioButton23.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton23.Name = "radioButton23";
             this.radioButton23.Size = new System.Drawing.Size(206, 21);
@@ -434,7 +478,7 @@
             // 
             this.radioButton26.AutoSize = true;
             this.radioButton26.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.radioButton26.Location = new System.Drawing.Point(17, 234);
+            this.radioButton26.Location = new System.Drawing.Point(4, 145);
             this.radioButton26.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton26.Name = "radioButton26";
             this.radioButton26.Size = new System.Drawing.Size(197, 21);
@@ -447,7 +491,7 @@
             // 
             this.radioButton27.AutoSize = true;
             this.radioButton27.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.radioButton27.Location = new System.Drawing.Point(335, 239);
+            this.radioButton27.Location = new System.Drawing.Point(312, 348);
             this.radioButton27.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton27.Name = "radioButton27";
             this.radioButton27.Size = new System.Drawing.Size(106, 21);
@@ -460,7 +504,7 @@
             // 
             this.radioButton28.AutoSize = true;
             this.radioButton28.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.radioButton28.Location = new System.Drawing.Point(17, 263);
+            this.radioButton28.Location = new System.Drawing.Point(4, 174);
             this.radioButton28.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton28.Name = "radioButton28";
             this.radioButton28.Size = new System.Drawing.Size(252, 21);
@@ -473,7 +517,7 @@
             // 
             this.radioButton29.AutoSize = true;
             this.radioButton29.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.radioButton29.Location = new System.Drawing.Point(17, 292);
+            this.radioButton29.Location = new System.Drawing.Point(4, 203);
             this.radioButton29.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton29.Name = "radioButton29";
             this.radioButton29.Size = new System.Drawing.Size(213, 21);
@@ -486,7 +530,7 @@
             // 
             this.radioButton30.AutoSize = true;
             this.radioButton30.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.radioButton30.Location = new System.Drawing.Point(17, 321);
+            this.radioButton30.Location = new System.Drawing.Point(4, 232);
             this.radioButton30.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton30.Name = "radioButton30";
             this.radioButton30.Size = new System.Drawing.Size(309, 21);
@@ -499,7 +543,7 @@
             // 
             this.radioButton31.AutoSize = true;
             this.radioButton31.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.radioButton31.Location = new System.Drawing.Point(17, 36);
+            this.radioButton31.Location = new System.Drawing.Point(4, 4);
             this.radioButton31.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton31.Name = "radioButton31";
             this.radioButton31.Size = new System.Drawing.Size(155, 21);
@@ -512,7 +556,7 @@
             // 
             this.radioButton32.AutoSize = true;
             this.radioButton32.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.radioButton32.Location = new System.Drawing.Point(335, 384);
+            this.radioButton32.Location = new System.Drawing.Point(312, 464);
             this.radioButton32.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton32.Name = "radioButton32";
             this.radioButton32.Size = new System.Drawing.Size(134, 21);
@@ -525,7 +569,7 @@
             // 
             this.radioButton33.AutoSize = true;
             this.radioButton33.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.radioButton33.Location = new System.Drawing.Point(335, 297);
+            this.radioButton33.Location = new System.Drawing.Point(312, 406);
             this.radioButton33.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton33.Name = "radioButton33";
             this.radioButton33.Size = new System.Drawing.Size(228, 21);
@@ -538,7 +582,7 @@
             // 
             this.radioButton34.AutoSize = true;
             this.radioButton34.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.radioButton34.Location = new System.Drawing.Point(17, 466);
+            this.radioButton34.Location = new System.Drawing.Point(4, 377);
             this.radioButton34.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton34.Name = "radioButton34";
             this.radioButton34.Size = new System.Drawing.Size(243, 21);
@@ -551,7 +595,7 @@
             // 
             this.radioButton35.AutoSize = true;
             this.radioButton35.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.radioButton35.Location = new System.Drawing.Point(17, 93);
+            this.radioButton35.Location = new System.Drawing.Point(4, 33);
             this.radioButton35.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton35.Name = "radioButton35";
             this.radioButton35.Size = new System.Drawing.Size(176, 21);
@@ -564,7 +608,7 @@
             // 
             this.radioButton36.AutoSize = true;
             this.radioButton36.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.radioButton36.Location = new System.Drawing.Point(17, 350);
+            this.radioButton36.Location = new System.Drawing.Point(4, 261);
             this.radioButton36.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton36.Name = "radioButton36";
             this.radioButton36.Size = new System.Drawing.Size(128, 21);
@@ -577,7 +621,7 @@
             // 
             this.radioButton37.AutoSize = true;
             this.radioButton37.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.radioButton37.Location = new System.Drawing.Point(17, 553);
+            this.radioButton37.Location = new System.Drawing.Point(4, 464);
             this.radioButton37.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton37.Name = "radioButton37";
             this.radioButton37.Size = new System.Drawing.Size(170, 21);
@@ -590,7 +634,7 @@
             // 
             this.radioButton38.AutoSize = true;
             this.radioButton38.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.radioButton38.Location = new System.Drawing.Point(17, 524);
+            this.radioButton38.Location = new System.Drawing.Point(4, 435);
             this.radioButton38.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton38.Name = "radioButton38";
             this.radioButton38.Size = new System.Drawing.Size(153, 21);
@@ -603,7 +647,7 @@
             // 
             this.radioButton39.AutoSize = true;
             this.radioButton39.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.radioButton39.Location = new System.Drawing.Point(17, 495);
+            this.radioButton39.Location = new System.Drawing.Point(4, 406);
             this.radioButton39.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton39.Name = "radioButton39";
             this.radioButton39.Size = new System.Drawing.Size(141, 21);
@@ -617,7 +661,7 @@
             // 
             this.radioButton40.AutoSize = true;
             this.radioButton40.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.radioButton40.Location = new System.Drawing.Point(17, 611);
+            this.radioButton40.Location = new System.Drawing.Point(4, 522);
             this.radioButton40.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton40.Name = "radioButton40";
             this.radioButton40.Size = new System.Drawing.Size(186, 21);
@@ -631,7 +675,7 @@
             // 
             this.radioButton41.AutoSize = true;
             this.radioButton41.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.radioButton41.Location = new System.Drawing.Point(335, 355);
+            this.radioButton41.Location = new System.Drawing.Point(4, 11);
             this.radioButton41.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton41.Name = "radioButton41";
             this.radioButton41.Size = new System.Drawing.Size(186, 21);
@@ -645,7 +689,7 @@
             // 
             this.radioButton42.AutoSize = true;
             this.radioButton42.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.radioButton42.Location = new System.Drawing.Point(335, 65);
+            this.radioButton42.Location = new System.Drawing.Point(4, 40);
             this.radioButton42.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton42.Name = "radioButton42";
             this.radioButton42.Size = new System.Drawing.Size(168, 21);
@@ -659,7 +703,7 @@
             // 
             this.AccDemostr.AutoSize = true;
             this.AccDemostr.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.AccDemostr.Location = new System.Drawing.Point(17, 65);
+            this.AccDemostr.Location = new System.Drawing.Point(4, 69);
             this.AccDemostr.Margin = new System.Windows.Forms.Padding(4);
             this.AccDemostr.Name = "AccDemostr";
             this.AccDemostr.Size = new System.Drawing.Size(222, 21);
@@ -698,12 +742,13 @@
             this.button4.TabIndex = 58;
             this.button4.Text = "Agregar Producto";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Visible = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // radioButton17
             // 
             this.radioButton17.AutoSize = true;
-            this.radioButton17.Location = new System.Drawing.Point(17, 121);
+            this.radioButton17.Location = new System.Drawing.Point(4, 61);
             this.radioButton17.Name = "radioButton17";
             this.radioButton17.Size = new System.Drawing.Size(174, 21);
             this.radioButton17.TabIndex = 59;
@@ -715,7 +760,7 @@
             // radioButton18
             // 
             this.radioButton18.AutoSize = true;
-            this.radioButton18.Location = new System.Drawing.Point(17, 177);
+            this.radioButton18.Location = new System.Drawing.Point(4, 117);
             this.radioButton18.Name = "radioButton18";
             this.radioButton18.Size = new System.Drawing.Size(154, 21);
             this.radioButton18.TabIndex = 60;
@@ -777,14 +822,15 @@
             this.label5.Size = new System.Drawing.Size(379, 2);
             this.label5.TabIndex = 66;
             // 
-            // label7
+            // lblInventario
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1501, 655);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(142, 17);
-            this.label7.TabIndex = 68;
-            this.label7.Text = "Total de Inventario: $";
+            this.lblInventario.AutoSize = true;
+            this.lblInventario.Location = new System.Drawing.Point(835, 840);
+            this.lblInventario.Name = "lblInventario";
+            this.lblInventario.Size = new System.Drawing.Size(130, 17);
+            this.lblInventario.TabIndex = 68;
+            this.lblInventario.Text = "Total de Inventario:";
+            this.lblInventario.Visible = false;
             // 
             // btnInventario
             // 
@@ -794,12 +840,13 @@
             this.btnInventario.TabIndex = 69;
             this.btnInventario.Text = "Calcular Inventario";
             this.btnInventario.UseVisualStyleBackColor = true;
+            this.btnInventario.Visible = false;
             this.btnInventario.Click += new System.EventHandler(this.button5_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(1700, 655);
+            this.label8.Location = new System.Drawing.Point(1007, 796);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(0, 17);
             this.label8.TabIndex = 70;
@@ -812,6 +859,7 @@
             this.button5.TabIndex = 71;
             this.button5.Text = "Eliminar Producto";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Visible = false;
             this.button5.Click += new System.EventHandler(this.button5_Click_1);
             // 
             // dataGridView1
@@ -827,10 +875,10 @@
             this.id,
             this.cantidadVendidos});
             this.dataGridView1.GridColor = System.Drawing.Color.Black;
-            this.dataGridView1.Location = new System.Drawing.Point(593, 33);
+            this.dataGridView1.Location = new System.Drawing.Point(591, 33);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(744, 737);
+            this.dataGridView1.Size = new System.Drawing.Size(746, 780);
             this.dataGridView1.TabIndex = 0;
             // 
             // Nombre
@@ -869,7 +917,7 @@
             // 
             this.radioTodo.AutoSize = true;
             this.radioTodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioTodo.Location = new System.Drawing.Point(335, 412);
+            this.radioTodo.Location = new System.Drawing.Point(312, 492);
             this.radioTodo.Name = "radioTodo";
             this.radioTodo.Size = new System.Drawing.Size(126, 21);
             this.radioTodo.TabIndex = 72;
@@ -881,7 +929,7 @@
             // lblAdmin
             // 
             this.lblAdmin.AutoSize = true;
-            this.lblAdmin.Location = new System.Drawing.Point(869, 791);
+            this.lblAdmin.Location = new System.Drawing.Point(611, 840);
             this.lblAdmin.Name = "lblAdmin";
             this.lblAdmin.Size = new System.Drawing.Size(85, 17);
             this.lblAdmin.TabIndex = 73;
@@ -890,7 +938,7 @@
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(960, 791);
+            this.txtPass.Location = new System.Drawing.Point(702, 837);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(110, 22);
             this.txtPass.TabIndex = 74;
@@ -899,7 +947,7 @@
             // 
             // btnAceptarPass
             // 
-            this.btnAceptarPass.Location = new System.Drawing.Point(925, 823);
+            this.btnAceptarPass.Location = new System.Drawing.Point(614, 867);
             this.btnAceptarPass.Name = "btnAceptarPass";
             this.btnAceptarPass.Size = new System.Drawing.Size(75, 23);
             this.btnAceptarPass.TabIndex = 75;
@@ -908,68 +956,132 @@
             this.btnAceptarPass.Visible = false;
             this.btnAceptarPass.Click += new System.EventHandler(this.btnAceptarPass_Click);
             // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.radioButton31);
+            this.panel1.Controls.Add(this.radioButton39);
+            this.panel1.Controls.Add(this.radioButton3);
+            this.panel1.Controls.Add(this.radioButton20);
+            this.panel1.Controls.Add(this.radioButton1);
+            this.panel1.Controls.Add(this.radioButton23);
+            this.panel1.Controls.Add(this.radioButton40);
+            this.panel1.Controls.Add(this.radioTodo);
+            this.panel1.Controls.Add(this.radioButton12);
+            this.panel1.Controls.Add(this.radioButton7);
+            this.panel1.Controls.Add(this.radioButton27);
+            this.panel1.Controls.Add(this.radioButton5);
+            this.panel1.Controls.Add(this.radioButton8);
+            this.panel1.Controls.Add(this.radioButton38);
+            this.panel1.Controls.Add(this.radioButton2);
+            this.panel1.Controls.Add(this.radioButton9);
+            this.panel1.Controls.Add(this.radioButton32);
+            this.panel1.Controls.Add(this.radioButton10);
+            this.panel1.Controls.Add(this.radioButton11);
+            this.panel1.Controls.Add(this.radioButton37);
+            this.panel1.Controls.Add(this.radioButton4);
+            this.panel1.Controls.Add(this.radioButton13);
+            this.panel1.Controls.Add(this.radioButton33);
+            this.panel1.Controls.Add(this.radioButton6);
+            this.panel1.Controls.Add(this.radioButton14);
+            this.panel1.Controls.Add(this.radioButton36);
+            this.panel1.Controls.Add(this.radioButton16);
+            this.panel1.Controls.Add(this.radioButton17);
+            this.panel1.Controls.Add(this.radioButton21);
+            this.panel1.Controls.Add(this.radioButton35);
+            this.panel1.Controls.Add(this.radioButton18);
+            this.panel1.Controls.Add(this.radioButton22);
+            this.panel1.Controls.Add(this.radioButton34);
+            this.panel1.Controls.Add(this.radioButton30);
+            this.panel1.Controls.Add(this.radioButton26);
+            this.panel1.Controls.Add(this.radioButton29);
+            this.panel1.Controls.Add(this.radioButton28);
+            this.panel1.Location = new System.Drawing.Point(12, 62);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(572, 229);
+            this.panel1.TabIndex = 76;
+            this.panel1.Visible = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.radioButton41);
+            this.panel2.Controls.Add(this.radioButton42);
+            this.panel2.Controls.Add(this.AccDemostr);
+            this.panel2.Location = new System.Drawing.Point(12, 312);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(572, 242);
+            this.panel2.TabIndex = 77;
+            this.panel2.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(9, 42);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 17);
+            this.label6.TabIndex = 78;
+            this.label6.Text = "Sección 1";
+            this.label6.Visible = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Location = new System.Drawing.Point(12, 574);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(572, 242);
+            this.panel3.TabIndex = 78;
+            this.panel3.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(9, 294);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(70, 17);
+            this.label7.TabIndex = 79;
+            this.label7.Text = "Sección 2";
+            this.label7.Visible = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(9, 556);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(70, 17);
+            this.label9.TabIndex = 80;
+            this.label9.Text = "Sección 3";
+            this.label9.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1914, 912);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnAceptarPass);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.lblAdmin);
-            this.Controls.Add(this.radioTodo);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnInventario);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblInventario);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.radioButton18);
-            this.Controls.Add(this.radioButton17);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.AccDemostr);
-            this.Controls.Add(this.radioButton42);
-            this.Controls.Add(this.radioButton41);
-            this.Controls.Add(this.radioButton40);
-            this.Controls.Add(this.radioButton39);
-            this.Controls.Add(this.radioButton38);
-            this.Controls.Add(this.radioButton37);
-            this.Controls.Add(this.radioButton36);
-            this.Controls.Add(this.radioButton35);
-            this.Controls.Add(this.radioButton34);
-            this.Controls.Add(this.radioButton33);
-            this.Controls.Add(this.radioButton32);
-            this.Controls.Add(this.radioButton31);
-            this.Controls.Add(this.radioButton30);
-            this.Controls.Add(this.radioButton29);
-            this.Controls.Add(this.radioButton28);
-            this.Controls.Add(this.radioButton27);
-            this.Controls.Add(this.radioButton26);
-            this.Controls.Add(this.radioButton23);
-            this.Controls.Add(this.radioButton22);
-            this.Controls.Add(this.radioButton21);
-            this.Controls.Add(this.radioButton20);
-            this.Controls.Add(this.radioButton16);
-            this.Controls.Add(this.radioButton14);
-            this.Controls.Add(this.radioButton13);
-            this.Controls.Add(this.radioButton12);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.radioButton11);
-            this.Controls.Add(this.radioButton10);
-            this.Controls.Add(this.radioButton9);
-            this.Controls.Add(this.radioButton8);
-            this.Controls.Add(this.radioButton7);
-            this.Controls.Add(this.radioButton6);
-            this.Controls.Add(this.radioButton5);
-            this.Controls.Add(this.radioButton4);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
@@ -984,6 +1096,10 @@
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1047,7 +1163,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblInventario;
         private System.Windows.Forms.Button btnInventario;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button5;
@@ -1062,6 +1178,16 @@
         private System.Windows.Forms.Label lblAdmin;
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Button btnAceptarPass;
+        private System.Windows.Forms.ToolStripMenuItem inventariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sección1ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sección2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sección3ToolStripMenuItem;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label9;
     }
 }
 
