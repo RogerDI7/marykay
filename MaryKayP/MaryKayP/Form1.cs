@@ -19,6 +19,7 @@ namespace MaryKayP
         int currentUser = 0;
         string input;
         string categoryIndex;
+        int operacion = 0;
 
         //Categorias Lapiz Labial
         public Button Lapiz_1 = new Button();
@@ -54,30 +55,14 @@ namespace MaryKayP
         {
             InitializeComponent();
             vendedorToolStripMenuItem.PerformClick();
-            read = dataGridView1.ReadOnly;
-            dataGridView1.ReadOnly = false;
-            DataSet ds = new DataSet();
-            //ds.ReadXml("C:\\Users\\Ara\\maryKayDB\\marykayDB.xml");
-            ds.ReadXml("C:\\Users\\roger\\Desktop\\marykayDB.xml");
-            foreach (DataRow item in ds.Tables["marykay"].Rows)
-            {
-                int n = dataGridView1.Rows.Add();
-                dataGridView1.Rows[n].Cells[0].Value = item[0].ToString();
-                dataGridView1.Rows[n].Cells[1].Value = item[1].ToString();
-                dataGridView1.Rows[n].Cells[2].Value = item[2].ToString();
-                dataGridView1.Rows[n].Cells[3].Value = item[3].ToString();
-                dataGridView1.Rows[n].Cells[4].Value = item[4].ToString();
-                dataGridView1.Rows[n].Cells[5].Value = item[5].ToString();
 
-            }
-            dataGridView1.ReadOnly = read;
 
 
         }
 
         //Categorias
         //lapiz labial++
-        
+
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             categoryIndex = "19";
@@ -953,6 +938,7 @@ namespace MaryKayP
         //Metodo para ingresar administrador
         private void administradorToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             if (currentUser != 1)
             {
                 btnAceptarPass.Visible = true;
@@ -979,36 +965,92 @@ namespace MaryKayP
         //Metodo para escribir XML
         private void button3_Click(object sender, EventArgs e)
         {
-            dataGridView1.ReadOnly = false;
-            DataSet ds = new DataSet();
-            DataTable dt = new DataTable();
-            dt.TableName = "marykay";
-            dt.Columns.Add("Nombre");
-            dt.Columns.Add("Precio");
-            dt.Columns.Add("Cantidad");
-            dt.Columns.Add("Cantidad_Ven");
-            dt.Columns.Add("id");
-            dt.Columns.Add("cantidadVendidos");
-            ds.Tables.Add(dt);
-
-            foreach (DataGridViewRow r in dataGridView1.Rows)
+            if (seccion == 1)
             {
-                DataRow row1 = ds.Tables["marykay"].NewRow();
-                row1["Nombre"] = r.Cells[0].Value.ToString();
-                row1["Precio"] = r.Cells[1].Value.ToString();
-                row1["Cantidad"] = r.Cells[2].Value.ToString();
-                row1["Cantidad_Ven"] = r.Cells[3].Value.ToString();
-                row1["id"] = r.Cells[4].Value.ToString();
-                row1["cantidadVendidos"] = r.Cells[5].Value.ToString();
-                ds.Tables["marykay"].Rows.Add(row1);
+                dataGridView1.ReadOnly = false;
+                DataSet ds = new DataSet();
+                DataTable dt = new DataTable();
+                dt.TableName = "marykay";
+                dt.Columns.Add("Nombre");
+                dt.Columns.Add("Precio");
+                dt.Columns.Add("Cantidad");
+                dt.Columns.Add("Cantidad_Ven");
+                dt.Columns.Add("id");
+                dt.Columns.Add("cantidadVendidos");
+                ds.Tables.Add(dt);
+
+                foreach (DataGridViewRow r in dataGridView1.Rows)
+                {
+                    DataRow row1 = ds.Tables["marykay"].NewRow();
+                    row1["Nombre"] = r.Cells[0].Value.ToString();
+                    row1["Precio"] = r.Cells[1].Value.ToString();
+                    row1["Cantidad"] = r.Cells[2].Value.ToString();
+                    row1["Cantidad_Ven"] = r.Cells[3].Value.ToString();
+                    row1["id"] = r.Cells[4].Value.ToString();
+                    row1["cantidadVendidos"] = r.Cells[5].Value.ToString();
+                    ds.Tables["marykay"].Rows.Add(row1);
+                }
+                //ds.WriteXml("C:\\Users\\Ara\\maryKayDB\\marykayDB.xml");
+                ds.WriteXml("C:\\Users\\roger\\Desktop\\marykayDB.xml");
             }
-            //ds.WriteXml("C:\\Users\\Ara\\maryKayDB\\marykayDB.xml");
-            ds.WriteXml("C:\\Users\\roger\\Desktop\\marykayDB.xml");
+            else if (seccion == 2)
+            {
+                dataGridView1.ReadOnly = false;
+                DataSet ds = new DataSet();
+                DataTable dt = new DataTable();
+                dt.TableName = "marykay";
+                dt.Columns.Add("Nombre");
+                dt.Columns.Add("Precio");
+                dt.Columns.Add("Cantidad");
+                dt.Columns.Add("Cantidad_Ven");
+                dt.Columns.Add("id");
+                dt.Columns.Add("cantidadVendidos");
+                ds.Tables.Add(dt);
+                foreach (DataGridViewRow r in dataGridView1.Rows)
+                {
+                    DataRow row1 = ds.Tables["marykay"].NewRow();
+                    row1["Nombre"] = r.Cells[0].Value.ToString();
+                    row1["Precio"] = r.Cells[1].Value.ToString();
+                    row1["Cantidad"] = r.Cells[2].Value.ToString();
+                    row1["Cantidad_Ven"] = r.Cells[3].Value.ToString();
+                    row1["id"] = r.Cells[4].Value.ToString();
+                    row1["cantidadVendidos"] = r.Cells[5].Value.ToString();
+                    ds.Tables["marykay"].Rows.Add(row1);
+                }
+                //ds.WriteXml("C:\\Users\\Ara\\maryKayDB\\marykayDB2.xml");
+                ds.WriteXml("C:\\Users\\roger\\Desktop\\marykayDB2.xml");
+            }
+            else if (seccion == 3)
+            {
+                dataGridView1.ReadOnly = false;
+                DataSet ds = new DataSet();
+                DataTable dt = new DataTable();
+                dt.TableName = "marykay";
+                dt.Columns.Add("Nombre");
+                dt.Columns.Add("Precio");
+                dt.Columns.Add("Cantidad");
+                dt.Columns.Add("Cantidad_Ven");
+                dt.Columns.Add("id");
+                dt.Columns.Add("cantidadVendidos");
+                ds.Tables.Add(dt);
+                foreach (DataGridViewRow r in dataGridView1.Rows)
+                {
+                    DataRow row1 = ds.Tables["marykay"].NewRow();
+                    row1["Nombre"] = r.Cells[0].Value.ToString();
+                    row1["Precio"] = r.Cells[1].Value.ToString();
+                    row1["Cantidad"] = r.Cells[2].Value.ToString();
+                    row1["Cantidad_Ven"] = r.Cells[3].Value.ToString();
+                    row1["id"] = r.Cells[4].Value.ToString();
+                    row1["cantidadVendidos"] = r.Cells[5].Value.ToString();
+                    ds.Tables["marykay"].Rows.Add(row1);
+                }
+                //ds.WriteXml("C:\\Users\\Ara\\maryKayDB\\marykayDB3.xml");
+                ds.WriteXml("C:\\Users\\roger\\Desktop\\marykayDB3.xml");
+            }
             if (currentUser != 1)
             {
                 dataGridView1.ReadOnly = true;
             }
-
         }
 
         //Agregar elemento
@@ -1024,8 +1066,8 @@ namespace MaryKayP
             newRow.Visible = true;
             dataGridView1.Rows.Add(newRow);
             dataGridView1.Refresh();
-        } 
-        
+        }
+
         //Eliminar producto
         private void button5_Click_1(object sender, EventArgs e)
         {
@@ -1040,41 +1082,75 @@ namespace MaryKayP
             }
             else
             {
-                
+
             }
-            
         }
 
         //Venta a clientes
         private void button2_Click(object sender, EventArgs e)
         {
             int rowIndex = dataGridView1.CurrentCell.RowIndex;
-            if (Int32.Parse(dataGridView1.Rows[rowIndex].Cells[2].Value.ToString()) > 0)
+            if ((double.Parse(dataGridView1.Rows[rowIndex].Cells[2].Value.ToString()) - double.Parse(textBox1.Text)) >= 0)
             {
-                int cantidadVendidos = Int32.Parse(textBox1.Text);
-                double totalVenta = Double.Parse(dataGridView1.Rows[rowIndex].Cells[1].Value.ToString()) * cantidadVendidos;
-                dataGridView1.Rows[rowIndex].Cells[2].Value = Int32.Parse(dataGridView1.Rows[rowIndex].Cells[2].Value.ToString()) - cantidadVendidos;
-                dataGridView1.Rows[rowIndex].Cells[3].Value = Double.Parse(dataGridView1.Rows[rowIndex].Cells[3].Value.ToString()) + totalVenta;
-                dataGridView1.Rows[rowIndex].Cells[5].Value = Int32.Parse(dataGridView1.Rows[rowIndex].Cells[5].Value.ToString()) + 1;
-                dataGridView1.Refresh();
+                DataGridViewRow producto = (DataGridViewRow)dataGridView1.Rows[rowIndex].Clone();
+                producto.Cells[0].Value = dataGridView1.Rows[rowIndex].Cells[0].Value;
+                producto.Cells[1].Value = dataGridView1.Rows[rowIndex].Cells[1].Value;
+                producto.Cells[2].Value = textBox1.Text;
+                producto.Cells[4].Value = rowIndex;
+                dataGridView2.Rows.Insert(0, producto);
             }
-                
+            else
+            {
+                MessageBox.Show("Inventario no suficiente");
+            }
         }
 
         //Venta a consultoras
         private void button1_Click(object sender, EventArgs e)
         {
             int rowIndex = dataGridView1.CurrentCell.RowIndex;
-            if (Int32.Parse(dataGridView1.Rows[rowIndex].Cells[2].Value.ToString()) > 0)
+            if ((double.Parse(dataGridView1.Rows[rowIndex].Cells[2].Value.ToString()) - double.Parse(textBox1.Text)) >= 0)
             {
-                int cantidadVendidos = Int32.Parse(textBox1.Text);
-                double totalVenta = (Double.Parse(dataGridView1.Rows[rowIndex].Cells[1].Value.ToString()) * cantidadVendidos) * .65;
-                dataGridView1.Rows[rowIndex].Cells[2].Value = Int32.Parse(dataGridView1.Rows[rowIndex].Cells[2].Value.ToString()) - cantidadVendidos;
-                dataGridView1.Rows[rowIndex].Cells[3].Value = Double.Parse(dataGridView1.Rows[rowIndex].Cells[3].Value.ToString()) + totalVenta;
-                dataGridView1.Rows[rowIndex].Cells[5].Value = Int32.Parse(dataGridView1.Rows[rowIndex].Cells[5].Value.ToString()) + 1;
-                dataGridView1.Refresh();
+                if (operacion == 1)
+                {
+                    double ventaTotal = 0;
+                    double ventaRow = 0;
+                    foreach (DataGridViewRow r in dataGridView2.Rows)
+                    {
+                        ventaRow = .65 * (double.Parse(r.Cells[1].Value.ToString()) * double.Parse(r.Cells[2].Value.ToString()));
+                        ventaTotal += ventaRow;
+                        dataGridView1.Rows[Int32.Parse(r.Cells[4].Value.ToString())].Cells[5].Value = Int32.Parse(dataGridView1.Rows[Int32.Parse(r.Cells[4].Value.ToString())].Cells[5].Value.ToString()) + Int32.Parse(r.Cells[2].Value.ToString());
+                        dataGridView1.Rows[Int32.Parse(r.Cells[4].Value.ToString())].Cells[3].Value = double.Parse(dataGridView1.Rows[Int32.Parse(r.Cells[4].Value.ToString())].Cells[3].Value.ToString()) + ventaRow;
+                        dataGridView1.Rows[Int32.Parse(r.Cells[4].Value.ToString())].Cells[2].Value = Int32.Parse(dataGridView1.Rows[Int32.Parse(r.Cells[4].Value.ToString())].Cells[2].Value.ToString()) - Int32.Parse(r.Cells[2].Value.ToString());
+                        dataGridView1.Refresh();
+                    }
+                    label4.Text = "Total de venta: " + ventaTotal.ToString("C");
+                }
+                else if (operacion == 2)
+                {
+                    double ventaTotal = 0;
+                    double ventaTotal1 = 0;
+                    double ventaRow = 0;
+                    double ventaRow1 = 0;
+                    foreach (DataGridViewRow r in dataGridView2.Rows)
+                    {
+                        ventaRow = double.Parse(r.Cells[1].Value.ToString()) * double.Parse(r.Cells[2].Value.ToString());
+                        ventaTotal += ventaRow;
+                        dataGridView1.Rows[Int32.Parse(r.Cells[4].Value.ToString())].Cells[2].Value = Int32.Parse(dataGridView1.Rows[Int32.Parse(r.Cells[4].Value.ToString())].Cells[2].Value.ToString()) + Int32.Parse(r.Cells[2].Value.ToString());
+                    }
+                    foreach (DataGridViewRow r in dataGridView3.Rows)
+                    {
+                        ventaRow1 = double.Parse(r.Cells[1].Value.ToString()) * double.Parse(r.Cells[2].Value.ToString());
+                        ventaTotal1 += ventaRow1;
+                        dataGridView1.Rows[Int32.Parse(r.Cells[4].Value.ToString())].Cells[2].Value = Int32.Parse(dataGridView1.Rows[Int32.Parse(r.Cells[4].Value.ToString())].Cells[2].Value.ToString()) - Int32.Parse(r.Cells[2].Value.ToString());
+                    }
+                    label4.Text = "Diferencia: " + ((ventaTotal1 - ventaTotal) * .65).ToString("C");
+                }
             }
-            
+            else
+            {
+                MessageBox.Show("Inventario no suficiente");
+            }
         }
 
         //Calcular valor total de inventario
@@ -1090,6 +1166,7 @@ namespace MaryKayP
             label8.Text = total.ToString("C");
             label8.Update();
         }
+
         //Login de admin
         private void btnAceptarPass_Click(object sender, EventArgs e)
         {
@@ -1116,41 +1193,181 @@ namespace MaryKayP
         //Abrir el primer Inventario
         private void sección1ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            label8.Text = "";
+            panel1.Enabled = true;
+            panel2.Enabled = false;
+            panel3.Enabled = false;
+            dataGridView1.Rows.Clear();
+            dataGridView1.Refresh();
             seccion = 1;
-            panel1.Visible = true;
-            panel2.Visible = false;
-            panel3.Visible = false;
-            label6.Visible = true;
-            label7.Visible = false;
-            label9.Visible = false;
 
+            read = dataGridView1.ReadOnly;
+            dataGridView1.ReadOnly = false;
+            DataSet ds = new DataSet();
+            //ds.ReadXml("C:\\Users\\Ara\\maryKayDB\\marykayDB.xml");
+            ds.ReadXml("C:\\Users\\roger\\Desktop\\marykayDB.xml");
+            foreach (DataRow item in ds.Tables["marykay"].Rows)
+            {
+                int n = dataGridView1.Rows.Add();
+                dataGridView1.Rows[n].Cells[0].Value = item[0].ToString();
+                dataGridView1.Rows[n].Cells[1].Value = item[1].ToString();
+                dataGridView1.Rows[n].Cells[2].Value = item[2].ToString();
+                dataGridView1.Rows[n].Cells[3].Value = item[3].ToString();
+                dataGridView1.Rows[n].Cells[4].Value = item[4].ToString();
+                dataGridView1.Rows[n].Cells[5].Value = item[5].ToString();
+
+            }
+            dataGridView1.ReadOnly = read;
         }
+
         //Abrir el segundo inventario
         private void sección2ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            label8.Text = "";
+            panel1.Enabled = false;
+            panel3.Enabled = false;
+            panel2.Enabled = true;
+            dataGridView1.Rows.Clear();
+            dataGridView1.Refresh();
             seccion = 2;
-            panel1.Visible = false;
-            panel2.Visible = true;
-            panel3.Visible = false;
-            label6.Visible = false;
-            label7.Visible = true;
-            label9.Visible = false;
+            read = dataGridView1.ReadOnly;
+            dataGridView1.ReadOnly = false;
+            DataSet ds = new DataSet();
+            //ds.ReadXml("C:\\Users\\Ara\\maryKayDB\\marykayDB2.xml");
+            ds.ReadXml("C:\\Users\\roger\\Desktop\\marykayDB2.xml");
+            foreach (DataRow item in ds.Tables["marykay"].Rows)
+            {
+                int n = dataGridView1.Rows.Add();
+                dataGridView1.Rows[n].Cells[0].Value = item[0].ToString();
+                dataGridView1.Rows[n].Cells[1].Value = item[1].ToString();
+                dataGridView1.Rows[n].Cells[2].Value = item[2].ToString();
+                dataGridView1.Rows[n].Cells[3].Value = item[3].ToString();
+                dataGridView1.Rows[n].Cells[4].Value = item[4].ToString();
+                dataGridView1.Rows[n].Cells[5].Value = item[5].ToString();
 
-
+            }
+            dataGridView1.ReadOnly = read;
         }
+
         //Abrir el tercer inventario
         private void sección3ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            label8.Text = "";
+            panel1.Enabled = false;
+            panel2.Enabled = false;
+            panel3.Enabled = true;
+            dataGridView1.Rows.Clear();
+            dataGridView1.Refresh();
             seccion = 3;
-            panel1.Visible = false;
-            panel2.Visible = false;
-            panel3.Visible = true;
-            label6.Visible = false;
-            label7.Visible = false;
-            label9.Visible = true;
+
+            read = dataGridView1.ReadOnly;
+            dataGridView1.ReadOnly = false;
+            DataSet ds = new DataSet();
+            //ds.ReadXml("C:\\Users\\Ara\\maryKayDB\\marykayDB3.xml");
+            ds.ReadXml("C:\\Users\\roger\\Desktop\\marykayDB3.xml");
+            foreach (DataRow item in ds.Tables["marykay"].Rows)
+            {
+                int n = dataGridView1.Rows.Add();
+                dataGridView1.Rows[n].Cells[0].Value = item[0].ToString();
+                dataGridView1.Rows[n].Cells[1].Value = item[1].ToString();
+                dataGridView1.Rows[n].Cells[2].Value = item[2].ToString();
+                dataGridView1.Rows[n].Cells[3].Value = item[3].ToString();
+                dataGridView1.Rows[n].Cells[4].Value = item[4].ToString();
+                dataGridView1.Rows[n].Cells[5].Value = item[5].ToString();
+
+            }
+            dataGridView1.ReadOnly = read;
+
 
         }
 
+        private void ventaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            label4.Text = "";
+            button2.Text = "Agregar";
+            button6.Text = "Venta";
+            button1.Text = "Ventra 35%";
+            operacion = 1;
+            dataGridView2.Rows.Clear();
+            dataGridView2.Refresh();
+            dataGridView3.Rows.Clear();
+            dataGridView3.Refresh();
+            dataGridView3.Enabled = false;
+            label5.Text = "Tabla Venta";
+            label10.Text = "";
+            label2.Text = "Proceso Venta";
+            panel4.Enabled = true;
+            panel5.Enabled = true;
+            dataGridView2.Enabled = true;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            int rowIndex = dataGridView1.CurrentCell.RowIndex;
+            if ((double.Parse(dataGridView1.Rows[rowIndex].Cells[2].Value.ToString()) - double.Parse(textBox1.Text)) >= 0)
+            {
+                if (operacion == 1)
+                {
+                    double ventaTotal = 0;
+                    double ventaRow = 0;
+                    foreach (DataGridViewRow r in dataGridView2.Rows)
+                    {
+                        ventaRow = double.Parse(r.Cells[1].Value.ToString()) * double.Parse(r.Cells[2].Value.ToString());
+                        ventaTotal += ventaRow;
+                        dataGridView1.Rows[Int32.Parse(r.Cells[4].Value.ToString())].Cells[2].Value = Int32.Parse(dataGridView1.Rows[Int32.Parse(r.Cells[4].Value.ToString())].Cells[2].Value.ToString()) - Int32.Parse(r.Cells[2].Value.ToString());
+                        dataGridView1.Rows[Int32.Parse(r.Cells[4].Value.ToString())].Cells[5].Value = Int32.Parse(dataGridView1.Rows[Int32.Parse(r.Cells[4].Value.ToString())].Cells[5].Value.ToString()) + Int32.Parse(r.Cells[2].Value.ToString());
+                        dataGridView1.Rows[Int32.Parse(r.Cells[4].Value.ToString())].Cells[3].Value = double.Parse(dataGridView1.Rows[Int32.Parse(r.Cells[4].Value.ToString())].Cells[3].Value.ToString()) + ventaRow;
+                        dataGridView1.Refresh();
+                    }
+                    label4.Text = "Total de venta: " + ventaTotal.ToString("C");
+                }
+
+                else if (operacion == 2)
+                {
+                    DataGridViewRow producto = (DataGridViewRow)dataGridView1.Rows[rowIndex].Clone();
+                    producto.Cells[0].Value = dataGridView1.Rows[rowIndex].Cells[0].Value;
+                    producto.Cells[1].Value = dataGridView1.Rows[rowIndex].Cells[1].Value;
+                    producto.Cells[2].Value = textBox1.Text;
+                    producto.Cells[4].Value = rowIndex;
+                    dataGridView3.Rows.Insert(0, producto);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Inventario no suficiente");
+            }
+        }
+
+        private void intercambioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            label4.Text = "";
+            operacion = 2;
+            label2.Text = "Proceso Intercambio";
+            panel4.Enabled = true;
+            dataGridView2.Rows.Clear();
+            dataGridView3.Rows.Clear();
+            dataGridView3.Refresh();
+            dataGridView2.Refresh();
+            label5.Text = "Entrada";
+            label10.Text = "Salida";
+            button2.Text = "Agregar Entrada";
+            button1.Text = "Aceptar";
+            button6.Text = "Agregar Salida";
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            dataGridView3.Rows.Clear();
+            dataGridView3.Refresh();
+            textBox1.Text = "0";
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            dataGridView2.Rows.Clear();
+            dataGridView2.Refresh();
+            textBox1.Text = "0";
+        }
     }//class
 
 }//namespace
